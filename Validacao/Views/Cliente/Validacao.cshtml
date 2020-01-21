@@ -1,0 +1,60 @@
+﻿@model Validacao.Models.Cliente
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Validacao</title>
+</head>
+<body>
+    <h2>Dados Envidos apos Validação</h2>
+    @Html.ValidationSummary(true, "Ocorreu um erro no formulario")
+
+    @using (Html.BeginForm())
+    {
+        <fieldset>
+            <legend>Cadastro de clinetes</legend>
+            <div class="editor-label">
+                @Html.DisplayNameFor(model => model.Nome)
+            </div>
+            <div class="editor-field">
+                @Html.DisplayFor(model => model.Nome)
+                
+            </div>
+
+            <div class="editor-label">
+                @Html.DisplayNameFor(model => model.Email)
+            </div>
+            <div class="editor-field">
+                @Html.DisplayFor(model => model.Email)
+               
+            </div>
+
+            <div class="editor-label">
+                @Html.DisplayNameFor(model => model.Telefone)
+            </div>
+            <div class="editor-field">
+                @Html.DisplayFor(model => model.Telefone)
+               
+            </div>
+
+            <div class="editor-label">
+                @Html.DisplayNameFor(model => model.Idade)
+            </div>
+            <div class="editor-field">
+                @Html.DisplayFor(model => model.Idade)
+               
+
+            <p>
+                <input type="submit" value="Enviar Dados" />
+            </p>
+
+        </fieldset>
+    }
+</body>
+</html>
