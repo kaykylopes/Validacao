@@ -56,5 +56,16 @@ namespace Validacao.Controllers
         {
             return View(cliente);
         }
+
+        public ActionResult ValidaEmailDisponivel(string email)
+        {
+            var baseDeEmails = new List<string>
+            {
+                "kaykylopes@hotmail.com",
+                "kaykylopes18@gmail.com"
+            };
+
+            return Json(baseDeEmails.All(b => b.ToString().ToLower() != email), JsonRequestBehavior.AllowGet);
+        }
     }
 }

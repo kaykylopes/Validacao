@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace Validacao.Models
 {
@@ -17,6 +18,7 @@ namespace Validacao.Models
 
         [Required(ErrorMessage = "o Email deve ser Informado")]
         [EmailAddress(ErrorMessage = "Informe o Email válido")]
+        [Remote("ValidaEmailDisponivel","Cliente",ErrorMessage = "Email já cadastrado na base de dados")]
         public string Email { get; set; }
 
         [StringLength(10, MinimumLength = 6, ErrorMessage = "o Telefone deve ter no minimo 6 caractere e maximo 10")]
